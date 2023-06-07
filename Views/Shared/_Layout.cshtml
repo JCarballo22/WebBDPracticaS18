@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Contiene la descripción de la pagina">
+    <meta name="author" content="Jonathan Carballlo">
+    <meta name="keywords" content="informacion, Datos, Procesos">
+    <meta name="copyright" content="Desarrollo web S.A de C.V">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/x-icon" href="img/ico.ico">
+
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/estilo.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <main id="Principal">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+                <div class="container">
+                    @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                   <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                       <ul class="navbar-nav flex-grow-1">
+                           <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                           <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                           <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                           <li>@Html.ActionLink("Empleado", "Index", "Empleadoes", new { area = "" }, new { @class = "nav-link" })</li>
+                       </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div id="Cuerpo">
+            @RenderBody()
+           
+        </div>
+
+        <footer>
+            <h2>By Jonathan Carballo</h2>
+            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </main>
+</body>
+</html>
